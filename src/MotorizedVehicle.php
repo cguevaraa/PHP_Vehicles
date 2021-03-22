@@ -5,23 +5,32 @@ use Vehicles\Vehicle; //use the class from the namespace Vehicles
 
 class MotorizedVehicle extends Vehicle
 {
-    //Attributes
+    //PROPERTIES
 
     const ALLOWED_ENERGIES = ['electric', 'fuel'];
 
     /**
      * The energy source
+     *
      * @var string
      */
     private string $energy;
 
     /**
      * The energy level
+     *
      * @var int
      */
-    private int $energyLevel;
+    protected int $energyLevel;
 
-    //Methods
+    /**
+     * Park brake state
+     *
+     * @var bool
+     */
+    protected bool $hasParkBrake;
+
+    //METHODS
 
     /**
      * MotorizedVehicle constructor
@@ -42,6 +51,21 @@ class MotorizedVehicle extends Vehicle
     }
 
     /**
+     * Start
+     *
+     * @param bool $hasParkBrake
+     */
+
+    public function start(bool $hasParkBrake)
+    {
+        if ($hasParkBrake) {
+            throw new Exception("The " .get_class($this) ." has the park brake on!");
+        } else {
+            echo "\nGo!\n";
+        }
+    }
+
+    /**
      * Get $energy
      * @return string
      */
@@ -58,6 +82,18 @@ class MotorizedVehicle extends Vehicle
     {
         return $this->energyLevel;
     }
+
+    /**
+     * Set park brake
+     *
+     * @param bool $hasParkBrake
+     *
+     */
+    public function setParkBrake(bool $hasParkBrake)
+    {
+        $this->hasParkBrake = $hasParkBrake;
+    }
+
 
     /**
      * Object to string
