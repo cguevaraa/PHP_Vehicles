@@ -2,7 +2,7 @@
 
 namespace Vehicles;
 
-class Vehicle
+abstract class Vehicle
 {
     //Attributes
 

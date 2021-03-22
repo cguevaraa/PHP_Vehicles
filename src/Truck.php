@@ -3,7 +3,7 @@
 require_once "../src/MotorizedVehicle.php"; //Import parent class
 //use Vehicles\Vehicle; //use the namespace
 
-class Truck extends MotorizedVehicle
+final class Truck extends MotorizedVehicle
 {
     //Attributes
 
