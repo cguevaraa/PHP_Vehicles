@@ -1,6 +1,7 @@
 <?php
 
 require_once "../src/MotorizedVehicle.php"; //Import the parent class
+require_once "../src/LightableInterface.php";
 //use Vehicles\Vehicle; //use the namespace
 
 class Car extends MotorizedVehicle implements LightableInterface

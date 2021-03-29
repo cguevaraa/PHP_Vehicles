@@ -4,6 +4,7 @@
 require_once "../src/Bycicle.php";
 require_once "../src/Car.php";
 require_once "../src/Truck.php";
+require_once "../src/Speedometer.php";
 
 //Use the namespace
 use Vehicles\Vehicle;
@@ -47,11 +48,14 @@ $truck1 = new Truck('red', 3, 'fuel', 100);
 // echo "Current charge: " .$truck1->getCurrentCharge() . PHP_EOL;
 // echo "The truck is: " .$truck1->isFull() . PHP_EOL;
 
-try {
-    $car1->start(false);
-} catch (Exception $e) {
-    echo "\nDeactivating park brake...\n";
-    $car1->setParkBrake(false);
-} finally {
-    echo "\nMy car rolls like a donut!\n";
-}
+//**TEST EXCPETION CATCHING**
+// try {
+//     $car1->start(false);
+// } catch (Exception $e) {
+//     echo "\nDeactivating park brake...\n";
+//     $car1->setParkBrake(false);
+// } finally {
+//     echo "\nMy car rolls like a donut!\n";
+// }
+
+echo Speedometer::convertKmtoMiles(10);
